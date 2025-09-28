@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: truthmirror
+  datasource:
+    url: jdbc:postgresql://localhost:5432/truth_mirror
+    username: mirror_user
+    password: mirror_pass
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+logging:
+  level:
+    org.springframework.data: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.springframework.security: DEBUG
+
+okta:
+  oauth2:
+    # Domain of your Auth0 tenant.
+    issuer: https://dev-5pv8vp68xhkek6mz.us.auth0.com/
+    # API Identifier for your Auth0 API.
+    audience: https://truthmirror/api
+
+emotion:
+  service:
+    baseUrl: http://localhost:8001
+
+spotify:
+  clientId: 123
+  clientSecret: 456
+  authUrl: https://accounts.spotify.com/api/token
+  searchUrl: https://api.spotify.com/v1/search
+
